@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "builtInPolicyDefinitions": {
+            "value": [
+                {
+                    "policyDefinitionName": "cf820ca0-f99e-4f3e-84fb-66e913812d21",
+                    "parameters": {
+                        "effect": {
+                            "value": "AuditIfNotExists"
+                        },
+                        "requiredRetentionDays": {
+                            "value": "360"
+                        }
+                    },
+                    "assignmentDisplayName": "Key Vault Diagnostics",
+                    "managedIdentity": false
+                },
+                {
+                    "policyDefinitionName": "3657f5a0-770e-44a3-b44e-9431ba1e9735",
+                    "parameters": {},
+                    "assignmentDisplayName": "Automation account variables should be encrypted;",
+                    "managedIdentity": false
+                }
+            ]
+        },
+        "builtInInitiatives": {
+            "value": [
+                {
+                    "initiativeName": "c96b2a9c-6fab-4ac2-ae21-502143491cd4",
+                    "parameters": {},
+                    "assignmentDisplayName": "Audit Windows VMs with a pending reboot",
+                    "managedIdentity": true
+                }
+            ]
+        }
+    }
+}
