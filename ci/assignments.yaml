@@ -11,7 +11,7 @@ resources:
     - repository: main
       type: github
       name: '$(RepoName)'
-      endpoint: $(GitHubServiceConnectionName)
+      endpoint: alguadam
 
 trigger: #continuous integration will be enabled for all branches and the path containing the ARM template
   branches:
