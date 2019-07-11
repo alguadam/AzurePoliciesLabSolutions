@@ -4,12 +4,14 @@ variables:
   RepoName: AzurePoliciesLabSolutions
   FolderPath: Templates/StorageAccount #change it you didn't follow our suggested path
   ArtifactName: storageAccount
+  GitHubServiceConnectionName: alguadam
 
 resources:
   repositories:
     - repository: main
       type: github
       name: '$(RepoName)'
+      endpoint: '$(GitHubServiceConnectionName)'
 
 trigger: #continuous integration will be enabled for all branches and the path containing the ARM templates related to Storage Account
   branches:

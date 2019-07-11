@@ -4,12 +4,14 @@ variables:
   RepoName: AzurePoliciesLabSolutions
   FolderPath: Templates/Assignments #change it you didn't follow our suggested path
   ArtifactName: assignments
+  GitHubServiceConnectionName: alguadam
 
 resources:
   repositories:
     - repository: main
       type: github
       name: '$(RepoName)'
+      endpoint: '$(GitHubServiceConnectionName)'
 
 trigger: #continuous integration will be enabled for all branches and the path containing the ARM template
   branches:
