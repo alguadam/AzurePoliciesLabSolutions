@@ -1,17 +1,16 @@
 name: $(Build.DefinitionName)-$(SourceBranchName)-$(Date:yyyyMMdd).$(Rev:rr)
 
 variables:
-  RepoName: AzurePoliciesLabSolutions
+  RepoName: alguadam/AzurePoliciesLabSolutions
   FolderPath: Parameters #change it you didn't follow our suggested path
   ArtifactName: parameters
-  GitHubServiceConnectionName: alguadam
 
 resources:
   repositories:
     - repository: main
       type: github
       name: '$(RepoName)'
-      endpoint: '$(GitHubServiceConnectionName)'
+      endpoint: alguadam
 
 trigger: #continuous integration will be enabled for all branches and the path containing the parameter files
   branches:

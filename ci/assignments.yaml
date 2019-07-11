@@ -1,10 +1,9 @@
 name: $(Build.DefinitionName)-$(SourceBranchName)-$(Date:yyyyMMdd).$(Rev:rr)
 
 variables:
-  RepoName: AzurePoliciesLabSolutions
+  RepoName: alguadam/AzurePoliciesLabSolutions
   FolderPath: Templates/Assignments #change it you didn't follow our suggested path
   ArtifactName: assignments
-  GitHubServiceConnectionName: alguadam
 
 resources:
   repositories:
