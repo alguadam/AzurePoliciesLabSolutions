@@ -8,7 +8,7 @@ variables:
 resources:
   repositories:
     - repository: main
-      type: git
+      type: github
       name: '$(RepoName)'
 
 trigger: #continuous integration will be enabled for all branches and the path containing the ARM templates related to Storage Account
