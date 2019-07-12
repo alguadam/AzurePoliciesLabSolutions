@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "storageAccountName": {
-            "value": "{your-storage-account-name}"
+            "value": "alguadamsa"
         },
         "supportsHttpsTrafficOnly": {
             "value": false

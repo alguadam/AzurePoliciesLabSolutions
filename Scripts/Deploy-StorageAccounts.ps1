@@ -1,13 +1,13 @@
-$rgName = "{resourceGroupName}"
-$storageAccountARMTemplate = "Templates\StorageAccount\deploy.json"
-$uncompliantStorageAccountARMTemplateParameters = "Parameters\lab02-storageAccount.HTTP.json"
-$compliantStorageAccountARMTemplateParameters = "Parameters\lab02-storageAccount.HTTPS.json"
+$rgName = "ODL-policies-devops-73297"
+$storageAccountARMTemplate = "..\Templates\StorageAccount\deploy.json"
+$uncompliantStorageAccountARMTemplateParameters = "..\Parameters\lab02-storageAccount.HTTP.json"
+$compliantStorageAccountARMTemplateParameters = "..\Parameters\lab02-storageAccount.HTTPS.json"
 
 # Deploy Uncompliant Storage Account (HTTP traffic allowed)
 $httpStorageAccountAzDeploymentParams = @{
     ResourceGroupName     = $rgName
     TemplateFile          = $storageAccountARMTemplate
-    TemplateParameterFile = $uncompliantStorageAccountARMTemplateParameters
+    TemplateParameterFile = (Get-Item $uncompliantStorageAccountARMTemplateParameters).FullName
     Name                  = "storageAccount-" + (Get-Date -Format FileDateTimeUniversal)
     ErrorAction           = "SilentlyContinue"
     ErrorVariable         = "saDeploymentError"
@@ -22,8 +22,8 @@ if ($saDeploymentError) {
 # Deploy Compliant Storage Account (HTTP traffic disallowed)
 $httpsStorageAccounttAzDeploymentParams = @{
     ResourceGroupName     = $rgName
-    TemplateFile          = $storageAccountARMTemplate
-    TemplateParameterFile = $compliantStorageAccountARMTemplateParameters
+    TemplateFile          = (Get-Item $storageAccountARMTemplate).FullName
+    TemplateParameterFile = (Get-Item $compliantStorageAccountARMTemplateParameters).FullName
     Name                  = "storageAccount-" + (Get-Date -Format FileDateTimeUniversal)
 }
 Write-Output "Deploying HTTPS Storage Account"

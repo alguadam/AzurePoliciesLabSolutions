@@ -8,15 +8,16 @@
     "functions": [],
     "resources": [
         {
-            "name": "{The Initiative name}",
+            "name": "StorageAccountInitiative",
             "type": "Microsoft.Authorization/policySetDefinitions",
             "apiVersion": "2018-05-01",
             "properties": {
-                "displayName": "{The Initiative display name}",
-                "description": "{The Initiative description}",
+                "policyType": "Custom",
+                "displayName": "Initiative for Storage Accounts",
+                "description": "Initiative for policies related to Storage Accounts",
                 "policyDefinitions": [
                     {
-                        "policyDefinitionId": "[resourceId('Microsoft.Authorization/policyDefinitions',variables('{The Policy Rule Definition name from Task 1}'))]"
+                        "policyDefinitionId": "[resourceId('Microsoft.Authorization/policyDefinitions',variables('policyName-storageAccountDenyHttps'))]"
                     }
                 ]
             }

@@ -5,9 +5,19 @@
         "customPolicyDefinitions": {
             "value": [
                 {
-                    "policyDefinitionName": "{the name given to the Initiative from Task 2}",
+                    "policyDefinitionName": "StorageAccount-DenyHTTP",
                     "parameters": {},
-                    "assignmentDisplayName": "{the display name to be shown}",
+                    "assignmentDisplayName": "Storage Account Deny HTTP",
+                    "managedIdentity": false
+                }
+            ]
+        },
+        "customInitiatives": {
+            "value": [
+                {
+                    "initiativeName": "StorageAccountInitiative",
+                    "parameters": {},
+                    "assignmentDisplayName": "Storage Account Initiative",
                     "managedIdentity": false
                 }
             ]

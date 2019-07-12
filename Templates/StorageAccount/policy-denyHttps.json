@@ -6,19 +6,34 @@
     "functions": [],
     "resources": [
         {
-            "name": "{The Policy Rule Definition name}",
+            "name": "StorageAccount-DenyHTTP",
             "type": "Microsoft.Authorization/policyDefinitions",
             "apiVersion": "2018-05-01",
             "properties": {
-                "displayName": "{The Policy Rule Definition Display Name}",
-                "description": "{The Policy Rule Definition description}",
+                "displayName": "Storage Account - Deny HTTP traffic",
                 "mode": "All",
                 "policyType": "Custom",
+                "description": "Deny when Storage Account is deployed with HTTP enabled",
                 "parameters": {},
                 "policyRule": {
                     "if": {
+                        "allOf": [
+                            {
+                                "anyOf": [
+                                    {
+                                        "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+                                        "exists": "false"
+                                    },
+                                    {
+                                        "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+                                        "equals": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     "then": {
+                        "effect": "deny"
                     }
                 }
             }
